@@ -21,7 +21,7 @@ nginx:
     - faye
 
 loomio:
-  image: loomio/loomio
+  image: keimi/loomio
   expose:
    - 3000
   env_file: ./env
@@ -33,7 +33,7 @@ loomio:
     - ./attachments:/loomio/public/system/attachments
 
 worker:
-  image: loomio/loomio
+  image: keimi/loomio
   env_file: ./env
   links:
     - db:db
