@@ -36,11 +36,11 @@ worker:
   image: keimi/loomio
   env_file: ./env
   links:
-    - db:db
+    - db
   environment:
     - DATABASE_URL=postgresql://postgres:password@db/loomio_production
   volumes:
-    - ./attachments:/loomio/public/system/attachments
+    - ./uploads:/loomio/public/system
   command: "bundle exec rake jobs:work"
 
 db:
